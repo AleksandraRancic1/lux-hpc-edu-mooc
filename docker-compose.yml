@@ -1,0 +1,93 @@
+services:
+
+  login01:
+    image: ghcr.io/aleksandrarancic1/lux-hpc-login-mooc:latest
+    container_name: login01
+    hostname: login01
+
+    ports:
+      - "2222:22"
+
+    volumes:
+      - home:/home
+      - scratch:/scratch
+      - logs:/logs
+      - jobs:/jobs
+      - modules:/modules
+      - /var/run/docker.sock:/var/run/docker.sock
+
+    networks:
+      - hpc
+
+
+  compute001:
+    image: ghcr.io/aleksandrarancic1/lux-hpc-compute-mooc:latest
+    container_name: compute001
+    hostname: compute001
+
+    volumes:
+      - home:/home
+      - scratch:/scratch
+      - logs:/logs
+      - modules:/modules
+
+    networks:
+      - hpc
+
+
+  compute002:
+    image: ghcr.io/aleksandrarancic1/lux-hpc-compute-mooc:latest
+    container_name: compute002
+    hostname: compute002
+
+    volumes:
+      - home:/home
+      - scratch:/scratch
+      - logs:/logs
+      - modules:/modules
+
+    networks:
+      - hpc
+
+
+  compute003:
+    image: ghcr.io/aleksandrarancic1/lux-hpc-compute-mooc:latest
+    container_name: compute003
+    hostname: compute003
+
+    volumes:
+      - home:/home
+      - scratch:/scratch
+      - logs:/logs
+      - modules:/modules
+
+    networks:
+      - hpc
+
+
+  compute004:
+    image: ghcr.io/aleksandrarancic1/lux-hpc-compute-mooc:latest
+    container_name: compute004
+    hostname: compute004
+
+    volumes:
+      - home:/home
+      - scratch:/scratch
+      - logs:/logs
+      - modules:/modules
+
+    networks:
+      - hpc
+
+
+networks:
+  hpc:
+    name: hpc-network
+
+
+volumes:
+  home:
+  scratch:
+  logs:
+  jobs:
+  modules:
