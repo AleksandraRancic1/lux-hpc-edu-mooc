@@ -1,0 +1,4 @@
+{
+  "name": "LUX HPC EDU MOOC",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu"
+}
