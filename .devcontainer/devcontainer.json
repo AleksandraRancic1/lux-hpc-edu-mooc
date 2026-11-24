@@ -1,4 +1,7 @@
 {
   "name": "LUX HPC EDU MOOC",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu"
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  }
 }
