@@ -1,4 +1,4 @@
-# LUX HPC EDU — HPC Educational Simulator
+![HPC for AI Educational Simulator](assets/poster.png)
 
 **A browser-based practical learning environment for High-Performance Computing (HPC) and Artificial Intelligence (AI) workflows.**
 
