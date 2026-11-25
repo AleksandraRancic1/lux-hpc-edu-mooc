@@ -2,7 +2,7 @@
 
 **A browser-based practical learning environment for High-Performance Computing (HPC) and Artificial Intelligence (AI) workflows.**
 
-**[Launch HPC Simulator in GitHub Codespaces](https://codespaces.new/AleksandraRancic1/lux-hpc-edu-mooc?ref=main)**
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/AleksandraRancic1/lux-hpc-edu-mooc?quickstart=1)
 
 
 ## Contents
