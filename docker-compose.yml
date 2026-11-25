@@ -1,7 +1,7 @@
 services:
 
   login01:
-    image: ghcr.io/aleksandrarancic1/lux-hpc-login-mooc:latest
+    image: ghcr.io/aleksandrarancic1/lux-hpc-login-mooc:v0.1.0
     container_name: login01
     hostname: login01
 
@@ -21,7 +21,7 @@ services:
 
 
   compute001:
-    image: ghcr.io/aleksandrarancic1/lux-hpc-compute-mooc:latest
+    image: ghcr.io/aleksandrarancic1/lux-hpc-compute-mooc:v0.1.0
     container_name: compute001
     hostname: compute001
 
@@ -36,7 +36,7 @@ services:
 
 
   compute002:
-    image: ghcr.io/aleksandrarancic1/lux-hpc-compute-mooc:latest
+    image: ghcr.io/aleksandrarancic1/lux-hpc-compute-mooc:v0.1.0
     container_name: compute002
     hostname: compute002
 
@@ -51,7 +51,7 @@ services:
 
 
   compute003:
-    image: ghcr.io/aleksandrarancic1/lux-hpc-compute-mooc:latest
+    image: ghcr.io/aleksandrarancic1/lux-hpc-compute-mooc:v0.1.0
     container_name: compute003
     hostname: compute003
 
@@ -66,7 +66,7 @@ services:
 
 
   compute004:
-    image: ghcr.io/aleksandrarancic1/lux-hpc-compute-mooc:latest
+    image: ghcr.io/aleksandrarancic1/lux-hpc-compute-mooc:v0.1.0
     container_name: compute004
     hostname: compute004
 
