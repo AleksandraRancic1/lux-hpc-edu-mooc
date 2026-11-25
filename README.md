@@ -1,4 +1,6 @@
-![HPC for AI Educational Simulator](assets/poster.png)
+![HPC for AI Educational Simulator(docs/assets/poster.png)](https://aleksandrarancic1.github.io/lux-hpc-edu-mooc/)
+
+**[Visit the HPC for AI Educational Simulator website](https://aleksandrarancic1.github.io/lux-hpc-edu-mooc/)**
 
 **A browser-based practical learning environment for High-Performance Computing (HPC) and Artificial Intelligence (AI) workflows.**
 
