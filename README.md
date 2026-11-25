@@ -1,4 +1,4 @@
-![HPC for AI Educational Simulator(docs/assets/poster.png)](https://aleksandrarancic1.github.io/lux-hpc-edu-mooc/)
+[![HPC for AI Educational Simulator](docs/assets/poster.png)](https://aleksandrarancic1.github.io/lux-hpc-edu-mooc/)
 
 **[Visit the HPC for AI Educational Simulator website](https://aleksandrarancic1.github.io/lux-hpc-edu-mooc/)**
 
