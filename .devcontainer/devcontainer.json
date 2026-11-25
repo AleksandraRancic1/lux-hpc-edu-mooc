@@ -3,5 +3,16 @@
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu24.04",
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+
+  "postStartCommand": "bash .devcontainer/start-simulator.sh",
+
+  "waitFor": "postStartCommand",
+
+  "portsAttributes": {
+    "2222": {
+      "label": "HPC SSH",
+      "onAutoForward": "ignore"
+    }
   }
 }
