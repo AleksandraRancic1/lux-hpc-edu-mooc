@@ -1,0 +1,12 @@
+# Automatically generated learner materials
+/exercises/
+/exercise-files/
+
+# Temporary extraction directories
+/.mooc-materials.*/
+
+# Local development files
+.DS_Store
+**/__pycache__/
+**/*.pyc
+.env

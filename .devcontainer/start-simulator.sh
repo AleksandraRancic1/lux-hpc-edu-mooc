@@ -28,6 +28,39 @@ echo "Starting compute nodes..."
 docker compose --parallel 1 up -d \
     compute001 compute002 compute003 compute004
 
+# Populate learner-facing exercise materials
+echo "Preparing learner workspace..."
+
+copy_materials() {
+    local source="$1"
+    local destination="$2"
+    local temporary
+
+    if [ -e "$destination" ]; then
+        echo "$destination already exists. Preserving files."
+        return 0
+    fi
+
+    temporary=$(mktemp -d .mooc-materials.XXXXXX)
+
+    if docker cp "login01:${source}/." "$temporary/"; then
+        mv "$temporary" "$destination"
+    else
+        rm -rf "$temporary"
+        return 1
+    fi
+}
+
+copy_materials \
+    /opt/lux-hpc-edu/exercises \
+    exercises
+
+copy_materials \
+    /opt/lux-hpc-edu/exercise-files \
+    exercise-files
+
+echo "Learner workspace is ready."
+
 # Configure the SSH connection
 mkdir -p "$HOME/.ssh"
 chmod 700 "$HOME/.ssh"
