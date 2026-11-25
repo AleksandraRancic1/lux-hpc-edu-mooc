@@ -19,8 +19,14 @@ if ! docker info >/dev/null 2>&1; then
     exit 1
 fi
 
-# Start the simulated HPC cluster
-docker compose up -d
+# Initialize shared volumes using the login node
+echo "Starting login node..."
+docker compose up -d login01
+
+# Start compute nodes sequentially
+echo "Starting compute nodes..."
+docker compose --parallel 1 up -d \
+    compute001 compute002 compute003 compute004
 
 # Configure the SSH connection
 mkdir -p "$HOME/.ssh"
