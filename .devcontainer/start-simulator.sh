@@ -31,25 +31,41 @@ docker compose --parallel 1 up -d \
 # Populate learner-facing exercise materials
 echo "Preparing learner workspace..."
 
-copy_materials() {
+copy_materials() (
     local source="$1"
     local destination="$2"
     local temporary
-
-    if [ -e "$destination" ]; then
-        echo "$destination already exists. Preserving files."
-        return 0
-    fi
+    local entry
+    local target
 
     temporary=$(mktemp -d .mooc-materials.XXXXXX)
 
-    if docker cp "login01:${source}/." "$temporary/"; then
-        mv "$temporary" "$destination"
-    else
-        rm -rf "$temporary"
-        return 1
-    fi
-}
+    trap 'rm -rf -- "$temporary"' EXIT
+
+    docker cp "login01:${source}/." "$temporary/"
+
+    mkdir -p "$destination"
+
+    shopt -s nullglob dotglob
+
+    for entry in "$temporary"/*; do
+
+        target="$destination/$(basename "$entry")"
+
+        if [ -e "$target" ] || [ -L "$target" ]; then
+
+            echo "Preserving existing: $target"
+
+        else
+
+            mv -- "$entry" "$target"
+
+            echo "Added: $target"
+
+        fi
+
+    done
+)
 
 copy_materials \
     /opt/lux-hpc-edu/exercises \

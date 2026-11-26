@@ -1,7 +1,7 @@
 services:
 
   login01:
-    image: ghcr.io/aleksandrarancic1/lux-hpc-login-mooc:v0.1.0
+    image: ghcr.io/aleksandrarancic1/lux-hpc-login-mooc:v0.2.0
     container_name: login01
     hostname: login01
 
